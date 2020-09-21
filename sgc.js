@@ -32,7 +32,11 @@ function refresca(id,enlace) {
 
    id.className = "active";
 
-   document.getElementById("marco").src = "html/"+enlace+".html";
+   if(enlace=="contacto") {
+      document.getElementById("marco").src = "contacto2/";
+   } else {
+      document.getElementById("marco").src = "html/"+enlace+".html";
+   }
    // document.getElementById("marco").reload();
    if (menudesplegado) {
       despliegamenu();

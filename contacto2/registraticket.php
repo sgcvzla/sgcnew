@@ -110,7 +110,7 @@ $correo = 'sgc-consultores-190075-blur-one@leads.getsirena.com';
 $mensaje  = "Nombre Completo: ".utf8_decode($_POST["cliente"])."\n";
 $mensaje .= "Email: ".trim($_POST["email"])."\n";
 $mensaje .= "Teléfono: ".trim($_POST["telefono"])."\n";
-$mensaje .= "Origen: Web-sgcvzla\n";
+$mensaje .= "Origen: Web-Sgcvzla\n";
 $mensaje .= "Industria: retail\n";
 $mensaje .= "Comentario: ".utf8_decode($_POST["detalles"])."\n";
 
