@@ -1,0 +1,55 @@
+{
+   "subscriptionId":"5f7ef841dd710a0004ab8c15",
+   "topic":"prospects",
+   "type":"updated",
+   "received":"2020-10-08T11:48:22.374Z",
+   "sent":"2020-10-08T11:48:22.374Z",
+   "attempts":1,
+   "prospect":{
+      "id":"5f6bdc3f5813c9000835287a",
+      "created":"2020-09-23T23:37:35.575Z",
+      "transferredAt":null,
+      "group":"SGC Consultores C.A.",
+      "groupId":"5f5baf3f4ef4d00004190077",
+      "account":"SGC Consultores C.A.",
+      "accountId":"5f5baf3f4ef4d00004190075",
+      "initialGroup":"SGC Consultores C.A.",
+      "initialGroupId":"5f5baf3f4ef4d00004190077",
+      "firstName":"Luis Rodríguez",
+      "nin":[],
+      "userMade":false,
+      "status":"followUp",
+      "additionalData":{},
+      "phones":["+584244178584"],
+      "emails":[],
+      "contactMediums":[
+         {
+            "_id":"5f6bdc3f5813c90008352881",
+            "type":"phone"
+         }
+      ],
+      "leads":[
+         {
+            "created":"2020-09-23T23:37:35.597Z",
+            "source":"WHATSAPP",
+            "utmSource":"WHATSAPP",
+            "providerKey":"wasp",
+            "comments":"",
+            "providerLeadId":"984bfc92-7587-4f5b-9328-7786f22a6fa9_584244178584",
+            "type":"retail"
+         }
+      ],
+      "agent":{
+         "id":"5f5baf3f4ef4d0000419007a",
+         "firstName":"Luis",
+         "lastName":"Rodríguez",
+         "phone":"+584244178584",
+         "email":"sgcvzla@gmail.com"
+      },
+      "assigned":"2020-09-23T23:40:48.615Z",
+      "firstContactedAt":"2020-09-23T23:37:36.162Z"
+   },
+   "updatedAt":"2020-10-08T11:48:22.182Z",
+   "operationId":"5f7efc86194b6000085fdd01",
+   "updates":["pendingViewCount"]
+}
