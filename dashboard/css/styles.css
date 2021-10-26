@@ -1,0 +1,135 @@
+* {
+   padding: 0;
+   margin: 0;
+   height: 100%;
+   width: 100%;
+   font-family: Arial, Helvetica, sans-serif;
+   border-radius: 8px;
+}
+/*
+.contenedor {
+}
+*/
+input {
+   padding-left: 10px;
+   padding-right: 10px;
+   background-color: lightgray;
+}
+
+button {
+   background-color:#012b67;
+   color: white;
+}
+
+/* 
+   El GRID
+*/
+.grid {
+	display: grid;
+	grid-template-areas: "x-header-l x-header-c x-header-r"
+                        "x-body-l x-body-c x-body-r"
+                        "x-footer-l x-footer-c x-footer-r";
+	grid-template-columns: 10% 1fr 10%;
+	grid-template-rows: 20% 1fr 5%;
+	/* grid-gap: 10px; */
+}
+
+.x-cabecera-l { grid-area: x-header-l; }
+.x-cabecera-c {
+	grid-area: x-header-c;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.x-cabecera-r { grid-area: x-header-r; }
+
+.x-cuerpo-l {	grid-area: x-body-l; }
+.x-cuerpo-c {
+	grid-area: x-body-c;
+   display: flex;
+   align-items: flex-start;
+   justify-content: center;
+   height: 100%;
+   width: 100%;
+}
+.x-cuerpo-r { grid-area: x-body-r; }
+
+.x-pie-l {	grid-area: x-footer-l; }
+.x-pie-c {
+   grid-area: x-footer-c;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 70%;
+}
+.x-pie-r { grid-area: x-footer-r; }
+/* 
+   El GRID llega hasta acá
+*/
+.imagen {
+   width: fit-content;
+   height: 100%;
+   margin: auto;
+}
+
+.dialogo {
+   margin-top: 10%;
+   height: auto;
+   width: 50%;
+   border: 1px gray solid;
+	box-shadow: 5px 5px gray;
+}
+
+.areadialogo {
+   width: 80%;
+   margin: auto;
+}
+
+.widget {
+   height: 45%;
+   width: 30%;
+   border: 1px gray solid;
+	box-shadow: 5px 5px gray;
+}
+
+.filacampo {
+   margin-top: 10px;
+   margin-bottom: 10px;
+   display: grid;
+	grid-template-areas: "l-etiqueta r-campo";
+	grid-template-columns: 40% 50%;
+	grid-template-rows: 1fr;
+   align-items: center;
+   justify-content: space-evenly;
+}
+
+.etiqueta {
+   width: 200px;
+}
+
+.campo {
+   width: 90%;
+}
+
+.areabotones {
+   display: flex;
+   margin-top: 30px;
+   margin-bottom: 10px;
+   justify-content: center;
+}
+
+.boton {
+   width: 9em;
+   margin-right: 10px;
+}
+
+@media only screen and (max-width: 840px) {
+   .grid {
+      grid-template-columns: 1% 1fr 1%;
+      grid-template-rows: 20% 1fr 5%;
+   }
+
+   .dialogo {
+      width: 95%;
+   }
+}

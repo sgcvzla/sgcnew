@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SGC Consultores - Dashboard</title>
+   <link rel="stylesheet" href="./css/styles.css">
+   <link rel="stylesheet" href="./css/menu.css">
+
+   <script type="text/javascript" src="./js/funciones.js"></script>
+</head>
+<body onload="inicio(0)">
+   <div class="contenedor">
+      <div class="grid-menu">
+         <div class="d-logo">
+            <div class="imagen">
+               <img src="../img/sgcpeq.png" alt="">
+            </div>
+         </div>
+         <div class="d-menu">
+            <ul class="menu">
+               <a style="text-decoration: none;" href="./index.html?menu=0">
+                  <li class="item-menu">Dashboard</li>
+               </a>
+            </ul>
+         </div>
+         <div id="bodyworkspace" class="d-body workspace" style="justify-content: center; margin-top: 10%;">
+            <div id="grafico" class="widget" style="width: 45%; margin: 2%;">
+               <h3 id="titulografico" style="text-align: center; margin: 5px auto; height: auto;">Análisis RFM</h3>
+               <div style="width: 400px; height: 227px; margin: 10px auto;">
+                  <canvas id="myChart" style="border:1px solid gray;"></canvas>
+               </div>
+            </div>      
+         </div>
+         <div class="d-pie">
+            <span style="width: auto; height: auto; position: fixed; bottom: 0;">
+               Desarrollado por <a href="https://www.sgc-consultores.com.ve">SGC Consultores</a>
+            </span>
+         </div>
+      </div>
+   </div>
+   <script src="./js/menu.js"></script>
+   <script src="./js/lib/chart.js"></script>
+   <script>
+      let aLdr, aLdrttl, sLbl, tLid, tLdt;
+      let xVB, xHC, xAVG, xBB, xCA, xBR;
+      let yVB, yHC, yAVG, yBB, yCA, yBR;
+      let myChart;
+
+      const inicio = (opcion) => {
+         menu(opcion);
+
+         const NUMBER_CFG =  [{x:7, y:1, r:6}, {x:2, y:5, r:3}, {x:4, y:2, r:4}, {x:6, y:8, r:10}, {x:5, y:3, r:5}];
+
+         console.log(NUMBER_CFG);
+
+         const labels = ['min', 'med', 'max'];
+         // const etiqx = ['Mínima frecuencia', 'Frecuencia media', 'Máxima frecuencia'];
+         // const etiqy = ['Menos reciente', 'Recencia media', 'Más reciente'];
+         const etiqx = ['Mínima frecuencia', 'Mínima frecuencia', 'Máxima frecuencia'];
+         const etiqy = ['Menos reciente', 'Menos reciente', 'Más reciente'];
+         const data = {
+            labels: labels,
+            datasets: [
+               {
+                  label: 'Dataset 1',
+                  data: NUMBER_CFG,
+                  borderColor: 'red',
+                  backgroundColor: 'red'
+               }
+            ]
+         };
+
+         const config = {
+            type: 'bubble',
+            data: data,
+            options: {
+               responsive: true,
+               plugins: {
+                  legend: {
+                     position: 'bottom',
+                     display: false
+                  },
+                  title: {
+                  display: false,
+                  text: 'Análisis RFM'
+                  }
+               },
+               scales: {
+                  x: {
+                     min: 0,
+                     max: 10,
+                     ticks: {
+                        callback: function(val, index) {
+                           return index > 0 ? etiqx[index] : '';
+                           // return index % 2 === 0 ? etiqx[index] : '';
+                           // return index % 2 === 0 ? this.getLabelForValue(val) : '';
+                           // return '';
+                        },
+                        stepSize: 5
+                     },
+                     title: {
+                        text: 'Frecuencia',
+                        display: false
+                     }
+                  },
+                  y: {
+                     min: 0,
+                     max: 10,
+                     ticks: {
+                        callback: function(val, index) {
+                           return index > 0 ? etiqy[index] : '';
+                           // return index % 2 === 0 ? etiqy[index] : '';
+                           // return index > 0 ? this.getLabelForValue(val) : '';
+                           // return '';
+                        },
+                        stepSize: 5
+                     },
+                     title: {
+                        text: 'Recencia',
+                        display: false
+                     }
+                  }
+               }
+            },
+         };
+
+         if (myChart) {
+            myChart.destroy();
+         }
+
+         myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+         );
+
+         // document.getElementById("grafico").style.display = 'table';
+         document.getElementById("myChart").style.height = '240px';
+         myChart.canvas.parentNode.style.paddingTop = '20px';
+         myChart.canvas.parentNode.style.height = '235px';
+      }
+   </script>
+</body>
+</html>
