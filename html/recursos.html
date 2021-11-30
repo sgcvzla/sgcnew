@@ -4,7 +4,25 @@
    <head> 
    </head>
    <body>
-      <h3>Recursos:</h3>
-      <p>Material descargable.</p>
+      <h3>Galería de NFT:</h3>
+      <!-- <p>NFT:</p> -->
+      <div id="mintable-widget" style="width: 60%; border: solid 1px gray; box-shadow: 5px 5px rgb(0 0 0 / 80%); margin: auto; padding: 0px 5px 5px; border-radius: 5px;"></div>
+      <script>
+         (function (w, d, s, o, f, js, fjs) {
+            w["Mintable_Widget"] = o;
+            w[o] = w[o] || function () {
+               (w[o].q = w[o].q || []).push(arguments);
+            };
+            (js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
+            js.id = o;
+            js.src = f;
+            js.async = 1;
+            fjs.parentNode.insertBefore(js, fjs);
+         })(window, document, "script", "widget", "https://unpkg.com/mintable-widget/dist/index.js");
+         widget("init", { targetElementId: "mintable-widget" });
+         widget("shownft", {
+            size:"mini",ids:["art/listing/DYHEtdQEeejeWua"],fontFamily:"Arial",backgroundColor:"#ffffff",fontColor:"#2d2d2d",subtitleColor:"#727272",buttonColor:"#2b3dea",buttonTextColor:"#ffffff",boxShadow:true
+         });
+      </script>
 	</body>
 </html>
