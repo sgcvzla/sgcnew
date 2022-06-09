@@ -29,6 +29,7 @@ function refresca(id,enlace) {
    document.getElementById("contacto").className = "";
    document.getElementById("tools").className = "";
    document.getElementById("pagos").className = "";
+   document.getElementById("privacidad").className = "";
 
    id.className = "active";
 
